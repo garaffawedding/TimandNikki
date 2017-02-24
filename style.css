@@ -3419,6 +3419,7 @@ a:hover {
 .footer__social .vertical {
   transform: rotate(-90deg);
   transform-origin: left top 0;
+  width: 150px;
 }
 @media (max-width: 820px) {
   /* line 26, ../scss/partials/_footer.scss */
