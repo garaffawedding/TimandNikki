@@ -209,7 +209,6 @@ $(document).ready(function(){
         $('.non-retina').colorbox({rel:'group5', transition:'none'})
         $('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
         
-        //Example of preserving a JavaScript event for inline calls.
         $("#click").click(function(){ 
           $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
           return false;
