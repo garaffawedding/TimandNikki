@@ -1077,7 +1077,6 @@
 		}
 	};
 
-	// Removes changes Colorbox made to the document, but does not remove the plugin.
 	publicMethod.remove = function () {
 		if (!$box) { return; }
 
@@ -1094,8 +1093,6 @@
 		$(document).unbind('click.'+prefix).unbind('keydown.'+prefix);
 	};
 
-	// A method for fetching the current element Colorbox is referencing.
-	// returns a jQuery object.
 	publicMethod.element = function () {
 		return $(settings.el);
 	};
