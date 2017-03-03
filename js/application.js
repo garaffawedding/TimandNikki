@@ -1,6 +1,6 @@
 $(document).ready(function(){
  preloader();
- hamburger();
+ /*hamburger();*/
  scrollto();
  animations();
  password();
@@ -36,7 +36,7 @@ function preloader() {
     //]]>
 }
 
-function hamburger() {
+/*function hamburger() {
  var $hamburger = $(".hamburger");
  $hamburger.on("click", function(e) {
    $hamburger.toggleClass("is-active");
@@ -46,7 +46,11 @@ function hamburger() {
        $hamburger.toggleClass("is-active");
        $(".menu").toggle("visible");
  });
-}
+}*/
+
+$('button').click(function() {
+  $(this).toggleClass('expanded').siblings('div').slideToggle();
+});
 
 function scrollto() {
  window.scrollTo(0,0);
@@ -181,13 +185,7 @@ function splittext() {
 }
 
 
-
-
-
-
-
-
-$(document).ready(function(){
+ $(document).ready(function(){
         //Examples of how to assign the Colorbox event to elements
         $(".group1").colorbox({rel:'group1'});
         $(".group2").colorbox({rel:'group2', transition:"fade"});
@@ -209,8 +207,9 @@ $(document).ready(function(){
         $('.non-retina').colorbox({rel:'group5', transition:'none'})
         $('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
         
+        //Example of preserving a JavaScript event for inline calls.
         $("#click").click(function(){ 
           $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
           return false;
         });
-      });
+      }); 
