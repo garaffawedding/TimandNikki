@@ -2892,7 +2892,6 @@ a:hover {
 @media (max-width: 600px) {
   /* line 1, ../scss/partials/_theproposal.scss */
   .theproposal {
-    background: none;
     height: auto;
   }
 }
@@ -2900,16 +2899,14 @@ a:hover {
 .theproposal .mobileimage {
   display: none;
 }
-@media (max-width: 600px) {
-  /* line 13, ../scss/partials/_theproposal.scss */
+/*@media (max-width: 600px) {
   .theproposal .mobileimage {
     display: block;
   }
-  /* line 17, ../scss/partials/_theproposal.scss */
   .theproposal .mobileimage img {
     max-width: 100%;
   }
-}
+} */
 /* line 22, ../scss/partials/_theproposal.scss */
 .theproposal img.ring {
   max-width: 45px;
