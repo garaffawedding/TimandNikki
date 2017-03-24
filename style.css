@@ -742,7 +742,7 @@ blockquote {
 
 /* line 104, ../scss/_typography.scss */
 span.caption {
-  font-size: 16px;
+  font-size: 22px;
   line-height: 18px;
   color: #000000;
 }
@@ -2988,7 +2988,9 @@ a:hover {
 }
 /* line 28, ../scss/partials/_theproposal.scss */
 .theproposal h3 {
+  font-family: 'Dancing Script', cursive;
   margin-bottom: 275px;
+  font-size: 50px;
 }
 @media (max-width: 600px) {
   /* line 28, ../scss/partials/_theproposal.scss */
@@ -2999,6 +3001,7 @@ a:hover {
 /* line 34, ../scss/partials/_theproposal.scss */
 .theproposal h3, .theproposal blockquote {
   text-align: center;
+  font-weight: 900;
 }
 @media (max-width: 600px) {
   /* line 34, ../scss/partials/_theproposal.scss */
