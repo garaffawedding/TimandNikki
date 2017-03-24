@@ -631,7 +631,7 @@ h2 {
 @media (max-width: 768px) {
   /* line 8, ../scss/_typography.scss */
   h2 {
-    font-size: 40px;
+    font-size: 38px;
     line-height: 44px;
   }
 }
