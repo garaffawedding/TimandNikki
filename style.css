@@ -625,7 +625,7 @@ h2 {
   font-size: 60px;
   line-height: 64px;
   margin-bottom: 30px;
-  color: #FF80AB;
+  color: #fea49b;
   letter-spacing: -2px;
 }
 @media (max-width: 768px) {
@@ -694,7 +694,7 @@ ul li {
 
 /* line 62, ../scss/_typography.scss */
 a {
-  color: #FF80AB;
+  color: #fea49b;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -717,12 +717,12 @@ a:before {
 /* line 80, ../scss/_typography.scss */
 a:after {
   right: 2.5px;
-  background: #FF80AB;
+  background: #fea49b;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 /* line 86, ../scss/_typography.scss */
 a:hover:before {
-  background: #FF80AB;
+  background: #fea49b;
   width: 100%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -2137,12 +2137,12 @@ p:last-of-type, ul:last-of-type, ol:last-of-type {
 /* line 171, ../scss/partials/_navigation.scss */
 .header__navigation .menu ul li a:after {
   right: 2.5px;
-  background: #FF80AB;
+  background: #fea49b;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 /* line 177, ../scss/partials/_navigation.scss */
 .header__navigation .menu ul li a:hover:before {
-  background: #FF80AB;
+  background: #fea49b;
   width: 100%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
