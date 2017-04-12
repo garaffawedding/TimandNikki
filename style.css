@@ -3134,7 +3134,7 @@ a:hover {
 }
 /* line 43, ../scss/partials/_thewedding.scss */
 .thewedding .left-column {
-  width: 40%;
+  width: 50%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -3182,7 +3182,7 @@ a:hover {
 }
 /* line 64, ../scss/partials/_thewedding.scss */
 .thewedding .right-column {
-  width: 60%;
+  width: 50%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -3193,7 +3193,10 @@ a:hover {
   /* line 64, ../scss/partials/_thewedding.scss */
   .thewedding .right-column {
     width: 100%;
-    float: left;
+    float: none;
+    margin: 0 auto;
+    padding-top: 0px;
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -3232,7 +3235,7 @@ a:hover {
 @media (max-width: 768px) {
   /* line 77, ../scss/partials/_thewedding.scss */
   .thewedding .right-column .row .time {
-    font-size: 18px;
+    font-size: 28px;
   }
 }
 @media (min-width: 820px) {
