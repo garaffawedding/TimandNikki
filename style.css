@@ -2679,7 +2679,7 @@ a:hover {
 @media (max-width: 768px) {
   /* line 221, ../scss/partials/_hero.scss */
   .hero .scroll_indicator {
-    bottom: 8%;
+    bottom: 1%;
   }
 }
 /* line 230, ../scss/partials/_hero.scss */
@@ -3168,7 +3168,7 @@ a:hover {
   .thewedding .left-column img {
     max-width: 60%;
     float: none;
-    display: block;
+    display: none;
     margin: 0px auto;
   }
 }
