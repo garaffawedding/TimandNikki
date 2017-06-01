@@ -2969,6 +2969,9 @@ a:hover {
   background-size: cover;
   position: relative;
 }
+.mobileimage {
+  display: none;
+}
 @media (max-width: 768px) {
   /* line 1, ../scss/partials/_theproposal.scss */
   .theproposal {
