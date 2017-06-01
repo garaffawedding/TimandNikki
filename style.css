@@ -2961,7 +2961,7 @@ a:hover {
 
 
 .theproposal {
-  height: 1000px;
+  height: 1700px;
   background: url("img/proposal.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2986,6 +2986,13 @@ a:hover {
   .theproposal .mobileimage img {
     max-width: 100%;
   }
+  .theproposal {
+  background: none;
+  }
+  .mobilebackground {
+    background: url("img/proposal.jpg") no-repeat center center;
+    height: 300px;
+  }
 } */
 /* line 22, ../scss/partials/_theproposal.scss */
 .theproposal img.ring {
@@ -2997,7 +3004,7 @@ a:hover {
 /* line 28, ../scss/partials/_theproposal.scss */
 .theproposal h3 {
   font-family: "Majesti Banner Book", Times, serif;
-  margin-bottom: 275px;
+  margin-bottom: 250px;
   font-size: 50px;
 }
 @media (max-width: 768px) {
