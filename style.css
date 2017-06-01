@@ -2973,6 +2973,7 @@ a:hover {
   /* line 1, ../scss/partials/_theproposal.scss */
   .theproposal {
     height: auto;
+    background: none;
   }
 }
 /* line 13, ../scss/partials/_theproposal.scss */
