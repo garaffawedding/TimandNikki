@@ -2979,7 +2979,7 @@ a:hover {
 .theproposal .mobileimage {
   display: none;
 }
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
   .theproposal .mobileimage {
     display: block;
   }
@@ -2993,7 +2993,7 @@ a:hover {
     background: url("img/proposal.jpg") no-repeat center center;
     height: 300px;
   }
-} */
+} 
 /* line 22, ../scss/partials/_theproposal.scss */
 .theproposal img.ring {
   max-width: 45px;
