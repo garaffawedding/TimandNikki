@@ -3150,11 +3150,6 @@ a:hover {
     padding-right: 10px;
   }
 }
-/* line 48, ../scss/partials/_thewedding.scss */
-.thewedding .left-column img {
-  max-width: 100%;
-}
-/* line 51, ../scss/partials/_thewedding.scss */
 .thewedding .left-column .theweddingparty {
   margin-top: 50px;
   float: right;
@@ -3164,12 +3159,6 @@ a:hover {
   /* line 51, ../scss/partials/_thewedding.scss */
   .thewedding .left-column .theweddingparty {
     width: 100%;
-  }
-  .thewedding .left-column img {
-    max-width: 60%;
-    float: none;
-    display: none;
-    margin: 0px auto;
   }
 }
 /* line 58, ../scss/partials/_thewedding.scss */
