@@ -182,7 +182,7 @@
 					<img class="cbvillage" src="img/venue.jpg" alt=""/>
 				</div>-->
 				<div class="left-column">
-					<div id="map" style="width: 100%; height: 400px; position: relative; overflow: hidden;"></div>
+					<div id="map" style="width: 100%; height: 400px; position: relative; overflow: hidden; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%);"></div>
 					
 				</div> 
 				<div class="right-column">
@@ -368,98 +368,77 @@
 		try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 		catch(e){window.attachEvent("onload", $buo_f)}
 	</script>
-	<script>
- var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: new google.maps.LatLng(-33.91722, 151.23064),
-          mapTypeId: 'roadmap'
-        });
+<script>
+    // Define your locations: HTML content for the info window, latitude, longitude
+    var locations = [
+      ['<h4>Rolling Hills Country Club</h4><p>333 Hurlbutt St<br>Wilton, CT 06897</p>', 41.209368, -73.418488],
+      ['<h4>Hilton Garden Inn</h4><p>560 Main Ave<br>Norwalk, CT 06851</p>', 41.155919, -73.421982],
+    ];
 
-        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-        var icons = {
-          parking: {
-            icon: iconBase + 'parking_lot_maps.png'
-          },
-          library: {
-            icon: iconBase + 'library_maps.png'
-          },
-          info: {
-            icon: iconBase + 'info-i_maps.png'
-          }
-        };
+    // Setup the different icons and shadows
+    var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/micons/';
 
-        var features = [
-          {
-            position: new google.maps.LatLng(-33.91721, 151.22630),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91539, 151.22820),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91747, 151.22912),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91910, 151.22907),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91725, 151.23011),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91872, 151.23089),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91784, 151.23094),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91682, 151.23149),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91790, 151.23463),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91666, 151.23468),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.916988, 151.233640),
-            type: 'info'
-          }, {
-            position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
-            type: 'parking'
-          }, {
-            position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
-            type: 'library'
-          }
-        ];
+    var icons = [
+      iconURLPrefix + 'pink-pushpin.png'
+    ]
+    var iconsLength = icons.length;
 
-        // Create markers.
-        features.forEach(function(feature) {
-          var marker = new google.maps.Marker({
-            position: feature.position,
-            icon: icons[feature.type].icon,
-            map: map
-          });
-        });
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
+      center: new google.maps.LatLng(-37.92, 151.25),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
       }
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 160
+    });
+
+    var markers = new Array();
+
+    var iconCounter = 0;
+
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+        iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {  
+                bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+
 
   </script>
 	<script src="js/src/vendor/TweenMax.min.js"></script>
