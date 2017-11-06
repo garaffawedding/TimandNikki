@@ -3163,7 +3163,7 @@ a:hover {
 }
 /* line 58, ../scss/partials/_thewedding.scss */
 .thewedding .left-column .theweddingparty .block {
-  width: 50%;
+  width: 40%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -3171,7 +3171,7 @@ a:hover {
 }
 /* line 64, ../scss/partials/_thewedding.scss */
 .thewedding .right-column {
-  width: 50%;
+  width: 60%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
