@@ -259,8 +259,8 @@
 						<h5 class="a-s">Where to Stay</h5>
 						<h6 style="text-transform: uppercase;" class="a-s">HOTEL</h6>
 						<ul class="a-s">
-						<li><a target="_blank" href="http://hiltongardeninn3.hilton.com/en/hotels/connecticut/hilton-garden-inn-norwalk-ORQNWGI/index.html">Hilton Garden Inn</a></li></ul>
-						<p class="a-s">We have set aside a block of rooms at the Hilton Garden Inn. <strong>The room block closes August 6th 2018.</strong> The rate is $129 for King and $149 for two queens, and you can book by clicking the link above. There will be a bus to/from the reception venue. If you will be taking the bus,  please let us know when you provide your email address below so that we can include you in the headcount.<br><br><a class='youtube' href="https://uconn.co1.qualtrics.com/SE/?SID=SV_eo3a4QngmKj102x">Click To Send Email Address</a></p> </div>
+						<li><a target="_blank" href="www.norwalk.hgi.com">Hilton Garden Inn</a></li></ul>
+						<p class="a-s">We have set aside a block of rooms at the Hilton Garden Inn. <strong>The room block closes August 6th 2018.</strong> The rate is $129 for King and $149 for two queens. To book, please <em>click the link above</em>, <em>enter your check in & check out dates</em>, and <em>click MORE Options</em>. <em>Click on Add Special Rate codes</em> and <em>enter Group Code:</em> <strong>MGWED</strong>. Continue to follow prompts to complete reservation & record your confirmation number. Reservations can also be made by calling <a href="tel:+1-800-492-7148">(800) 492-7148</a>, and requesting the group: <strong>Muthersbaugh Garaffa Wedding Rooms</strong>. There will be a bus to/from the reception venue. If you will be taking the bus,  please let us know when you provide your email address below so that we can include you in the headcount.<br><br><a class='youtube' href="https://uconn.co1.qualtrics.com/SE/?SID=SV_eo3a4QngmKj102x">Click To Send Email Address</a></p> </div>
 					<div class="block">
 						<h5 class="a-s">What to Do Here</h5>
 						<h6 style="text-transform: uppercase;" class="a-s">Just to list a few ideas</h6>
@@ -376,15 +376,12 @@
       ['<h4>Rolling Hills Country Club</h4><p>33 Hurlbutt St<br>Wilton, CT 06897</p>', 41.209368, -73.418488],
       ['<h4>Hilton Garden Inn</h4><p>560 Main Ave<br>Norwalk, CT 06851</p>', 41.155919, -73.421982],
     ];
-
     // Setup the different icons and shadows
     var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/micons/';
-
     var icons = [
       iconURLPrefix + 'pink-pushpin.png'
     ]
     var iconsLength = icons.length;
-
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
       center: new google.maps.LatLng(-37.92, 151.25),
@@ -396,15 +393,11 @@
          position: google.maps.ControlPosition.LEFT_BOTTOM
       }
     });
-
     var infowindow = new google.maps.InfoWindow({
       maxWidth: 160
     });
-
     var markers = new Array();
-
     var iconCounter = 0;
-
     // Add the markers and infowindows to the map
     for (var i = 0; i < locations.length; i++) {  
       var marker = new google.maps.Marker({
@@ -412,23 +405,19 @@
         map: map,
         icon: icons[iconCounter]
       });
-
       markers.push(marker);
-
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
         }
       })(marker, i));
-
       iconCounter++;
       // We only have a limited number of possible icon colors, so we may have to restart the counter
       if(iconCounter >= iconsLength) {
         iconCounter = 0;
       }
     }
-
     function autoCenter() {
       //  Create a new viewpoint bound
       var bounds = new google.maps.LatLngBounds();
@@ -440,8 +429,6 @@
       map.fitBounds(bounds);
     }
     autoCenter();
-
-
   </script>
 	<script src="js/src/vendor/TweenMax.min.js"></script>
 	<script src="js/src/vendor/ScrollMagic.js"></script>
